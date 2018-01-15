@@ -1,6 +1,6 @@
 # Orc Library
 
-Orc library generates Orc names.
+Orc library generates Orc names, greetings, and weapons.
 
 ## Usage
 
@@ -14,12 +14,13 @@ import (
 )
 
 func main() {
-	fmt.Println(orc.GenerateName())
+	fmt.Printf("%s greets you with \"%s!\", holding a %s \n",
+		orc.GenerateName(), orc.GenerateGreeting(), orc.GenerateWeapon())
 }
 ```
 
 ## Example output
 
 ```
-Gulrug
+Guldug greets you with "Time to die!", holding a DismalTrowel
 ```
