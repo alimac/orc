@@ -1,9 +1,11 @@
+// Package orc provides helper methods to generate orc attributes.
+//
 package orc
 
 import (
 	"math/rand"
+	"strings"
 	"time"
-	"unicode"
 )
 
 var prefixes = []string{
@@ -95,40 +97,22 @@ var adjectives = []string{
 	"war",
 }
 
-func getRandom(slice []string) string {
-	return slice[rand.Intn(len(slice)-1)]
-}
+// Forge returns the requested orc attribute (name, greeting, or weapon).
+func Forge(attribute string) string {
+	rand.Seed(time.Now().Unix())
 
-func uppercaseFirstLetter(word string) string {
-	a := []rune(word)
-	a[0] = unicode.ToUpper(a[0])
-	return string(a)
-}
-
-func lowercaseFirstLetter(word string) string {
-	a := []rune(word)
-	a[0] = unicode.ToLower(a[0])
-	return string(a)
-}
-
-// GenerateName is returns a random Orc name
-func GenerateName() string {
-	rand.Seed(time.Now().UnixNano())
-	prefix := uppercaseFirstLetter(getRandom(prefixes))
-	suffix := lowercaseFirstLetter(getRandom(suffixes))
-	return prefix + suffix
-}
-
-// GenerateGreeting is returns a random Orc greeting
-func GenerateGreeting() string {
-	rand.Seed(time.Now().UnixNano())
-	return uppercaseFirstLetter(getRandom(greetings))
-}
-
-// GenerateWeapon is returns a random Orc weapon
-func GenerateWeapon() string {
-	rand.Seed(time.Now().UnixNano())
-	adjective := uppercaseFirstLetter(getRandom(adjectives))
-	weapon := uppercaseFirstLetter(getRandom(weapons))
-	return adjective + weapon
+	switch attribute {
+	case "name":
+		prefix := strings.Title(prefixes[rand.Intn(len(prefixes))])
+		suffix := suffixes[rand.Intn(len(suffixes))]
+		return prefix + suffix
+	case "greeting":
+		return strings.Title(greetings[rand.Intn(len(greetings))])
+	case "weapon":
+		adjective := strings.Title(adjectives[rand.Intn(len(adjectives))])
+		weapon := strings.Title(weapons[rand.Intn(len(weapons))])
+		return adjective + weapon
+	default:
+		return ""
+	}
 }

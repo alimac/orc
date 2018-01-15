@@ -2,6 +2,10 @@
 
 Orc library generates Orc names, greetings, and weapons.
 
+Inspired by [https://github.com/Pallinder/sillyname-go](sillyname-go) library.
+
+Used in [https://github.com/alimac/orc-foundry](orc-foundry) project.
+
 ## Usage
 
 ``` go
@@ -15,7 +19,7 @@ import (
 
 func main() {
 	fmt.Printf("%s greets you with \"%s!\", holding a %s \n",
-		orc.GenerateName(), orc.GenerateGreeting(), orc.GenerateWeapon())
+		orc.Forge("name"), orc.Forge("greeting"), orc.Forge("weapon"))
 }
 ```
 
