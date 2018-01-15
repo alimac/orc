@@ -1,5 +1,7 @@
 # Orc Library
 
+[![Godoc](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](https://godoc.org/github.com/alimac/orc)
+
 Orc library generates Orc names, greetings, and weapons.
 
 Inspired by [https://github.com/Pallinder/sillyname-go](sillyname-go) library.
