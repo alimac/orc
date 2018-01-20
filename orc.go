@@ -11,7 +11,7 @@ import (
 // Forge returns the requested orc attribute.
 // Supported attributes: name, greeting, weapon.
 func Forge(attribute string) string {
-	rand.Seed(time.Now().Unix())
+	rand.Seed(time.Now().UnixNano())
 
 	switch attribute {
 	case "name":
