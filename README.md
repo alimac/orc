@@ -1,6 +1,8 @@
-# Orc Library
+[![Build Status](https://travis-ci.org/alimac/orc.svg?branch=master)](https://travis-ci.org/alimac/orc)
+[![Coverage Status](https://coveralls.io/repos/github/alimac/orc/badge.svg?branch=master)](https://coveralls.io/github/alimac/orc?branch=master)
+[![Godoc](http://img.shields.io/badge/go-documentation-blue.svg)](https://godoc.org/github.com/alimac/orc)
 
-[![Godoc](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](https://godoc.org/github.com/alimac/orc)
+# Orc Library
 
 Orc library generates Orc names, greetings, and weapons.
 
